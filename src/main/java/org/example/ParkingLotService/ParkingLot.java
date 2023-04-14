@@ -59,6 +59,7 @@ public class ParkingLot {
         String[] token = ticketId.split("_");
         int floorNumber = Integer.parseInt(token[1]) - 1;
         int slotNumber = Integer.parseInt(token[2]) - 1;
+//        here checking the floor and slotId is occupied or not
         Floor floor = floors.get(floorNumber);
         if(floorNumber < numberOfFloors && slotNumber < numberOfSlots){
             if(floor.getSlots().get(slotNumber).isOccupied()){
