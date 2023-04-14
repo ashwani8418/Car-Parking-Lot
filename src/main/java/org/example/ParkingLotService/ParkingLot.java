@@ -35,19 +35,6 @@ public class ParkingLot {
             slotTracker.put(floor, list);
         }
     }
-
-    public int getNumberOfFloors() {
-        return numberOfFloors;
-    }
-
-    public int getNumberOfSlots() {
-        return numberOfSlots;
-    }
-
-    public String getParkingId() {
-        return parkingId;
-    }
-
     public void parkVehicle(Vehicle vehicle){
         for (int i = 0; i < numberOfFloors; i++) {
             Floor floor = floors.get(i);
@@ -122,7 +109,7 @@ public class ParkingLot {
             List<Slot> slot = floor.getSlots();
             StringBuilder st = new StringBuilder("");
             for (Slot value : slot) {
-                if(String.valueOf(value.getVehicleType().toString()).equals(vehicleType) && value.isOccupied()){
+                if(String.valueOf(value.getVehicleType()).equals(vehicleType) && value.isOccupied()){
                     st.append(value.getSlotID() + 1 + " , ");
                 }
             }
